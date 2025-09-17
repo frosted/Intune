@@ -44,6 +44,7 @@ function Get-IntunePagedResults {
         'ODataVersion'     = 4
         'Implementation'   = "2.0"
         'ConsistencyLevel' = "eventual"
+        'Top'              = 999
     }
 
     # Construct the full URL for the request
@@ -93,4 +94,5 @@ function Get-IntunePagedResults {
     Else {
         return $allResults | ForEach-Object { $_ }
     }
+
 }
