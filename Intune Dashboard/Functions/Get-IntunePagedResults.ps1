@@ -73,7 +73,7 @@ function Get-IntunePagedResults {
             $allResults.Add($response.value)
             $url = $response.'@odata.nextlink'
             $pageCount++
-            if ($pageCount -eq 30) {
+            if ($pageCount -eq 25) {
                 $pauseTimeStamp = get-date
                 do {
                     Write-Host -NoNewline ("`rLoading $($label) (preventing API request overload) {0} {1}" -f ($pageCount + 1), $loadingChars[$loadingIndex])
@@ -96,3 +96,4 @@ function Get-IntunePagedResults {
     }
 
 }
+
